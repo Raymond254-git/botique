@@ -46,6 +46,17 @@ function renderInventory() {
   attachActionHandlers();
 }
 
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  clearTimeout(showToast.timeoutId);
+  showToast.timeoutId = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2200);
+}
+
 function attachActionHandlers() {
   document.querySelectorAll('[data-action="restock"]').forEach((button) => {
     button.addEventListener('click', () => {
@@ -54,14 +65,44 @@ function attachActionHandlers() {
 
       if (item) {
         item.stock += 6;
+        showToast(`${item.name} has been restocked.`);
         renderInventory();
       }
+    });
+  });
+
+  document.querySelectorAll('.reserve-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+      const product = button.dataset.product;
+      const item = inventory.find((entry) => entry.name === product);
+
+      if (!item) {
+        showToast('Product not found.');
+        return;
+      }
+
+      if (item.stock <= 0) {
+        showToast(`${product} is currently out of stock.`);
+        return;
+      }
+
+      item.stock -= 1;
+      showToast(`${product} reserved successfully.`);
+      renderInventory();
     });
   });
 }
 
 const contactForm = document.getElementById('contact-form');
 const successMessage = document.getElementById('form-success');
+const stylingButton = document.querySelector('.cta-btn');
+
+stylingButton.addEventListener('click', () => {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  const nameInput = document.querySelector('input[name="name"]');
+  if (nameInput) nameInput.focus();
+  showToast('Styling booking opened. Tell us what you are looking for.');
+});
 
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -69,6 +110,7 @@ contactForm.addEventListener('submit', (event) => {
   const name = formData.get('name');
 
   successMessage.textContent = `Thank you, ${name}! Your boutique enquiry has been received.`;
+  showToast('Enquiry sent successfully.');
   contactForm.reset();
 });
 
