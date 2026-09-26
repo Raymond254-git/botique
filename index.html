@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veloura Boutique</title>
+    <meta
+      name="description"
+      content="Veloura Boutique for premium customer service and goods monitoring."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-mark">V</span>
+          <div>
+            <h1>Veloura</h1>
+            <small>Boutique</small>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#collections">Collections</a>
+          <a href="#monitoring">Goods Monitoring</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="cta-btn">Book a Styling</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Curated pieces. Thoughtful service.</p>
+            <h2>Elevate your wardrobe with boutique essentials.</h2>
+            <p class="lead">
+              Discover refined fashion, attentive customer care, and smart inventory
+              tracking that keeps every favorite item in stock.
+            </p>
+            <div class="hero-actions">
+              <a href="#collections" class="primary-btn">Shop Collection</a>
+              <a href="#contact" class="secondary-btn">Speak with us</a>
+            </div>
+            <ul class="trust-list">
+              <li>Free styling advice</li>
+              <li>Fast restocking updates</li>
+              <li>Premium customer support</li>
+            </ul>
+          </div>
+
+          <div class="hero-card">
+            <div class="card-header">
+              <span>Today’s boutique snapshot</span>
+              <span class="pulse-dot"></span>
+            </div>
+            <div class="mini-stat-grid">
+              <div>
+                <strong>128</strong>
+                <span>Orders</span>
+              </div>
+              <div>
+                <strong>94%</strong>
+                <span>Satisfaction</span>
+              </div>
+              <div>
+                <strong>16</strong>
+                <span>New arrivals</span>
+              </div>
+              <div>
+                <strong>08</strong>
+                <span>Styling calls</span>
+              </div>
+            </div>
+            <div class="product-preview">
+              <div class="preview-image"></div>
+              <div class="preview-meta">
+                <p>Signature Silk Set</p>
+                <span>Low stock alert</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats container">
+        <div class="stat-box">
+          <strong>2.4k+</strong>
+          <span>Happy customers</span>
+        </div>
+        <div class="stat-box">
+          <strong>350+</strong>
+          <span>Unique pieces</span>
+        </div>
+        <div class="stat-box">
+          <strong>24/7</strong>
+          <span>Support access</span>
+        </div>
+        <div class="stat-box">
+          <strong>12h</strong>
+          <span>Average delivery</span>
+        </div>
+      </section>
+
+      <section class="collections container" id="collections">
+        <div class="section-heading">
+          <p class="eyebrow">Featured collection</p>
+          <h3>Handpicked for every occasion</h3>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image image-one"></div>
+            <div class="product-info">
+              <div>
+                <h4>Velvet Evening Dress</h4>
+                <p>Luxury finish • Limited piece</p>
+              </div>
+              <div class="price-row">
+                <span>$180</span>
+                <button>Reserve</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image image-two"></div>
+            <div class="product-info">
+              <div>
+                <h4>Classic Leather Tote</h4>
+                <p>Premium leather • Everyday carry</p>
+              </div>
+              <div class="price-row">
+                <span>$120</span>
+                <button>Reserve</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image image-three"></div>
+            <div class="product-info">
+              <div>
+                <h4>Silk Statement Set</h4>
+                <p>Soft texture • Signature drop</p>
+              </div>
+              <div class="price-row">
+                <span>$160</span>
+                <button>Reserve</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="monitoring container" id="monitoring">
+        <div class="section-heading inline-heading">
+          <div>
+            <p class="eyebrow">Goods monitoring</p>
+            <h3>Track stock at a glance</h3>
+          </div>
+          <span class="status-pill">Live inventory</span>
+        </div>
+
+        <div class="inventory-panel">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="inventory-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="contact container" id="contact">
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <p class="eyebrow">Customer interaction</p>
+            <h3>We love helping you find the right fit.</h3>
+            <p>
+              Ask about styling advice, custom orders, and product availability.
+              Our boutique team is ready to assist you.
+            </p>
+
+            <div class="mini-contact-list">
+              <div>
+                <strong>Email</strong>
+                <span>hello@veloura.com</span>
+              </div>
+              <div>
+                <strong>Phone</strong>
+                <span>+1 (415) 489-2200</span>
+              </div>
+              <div>
+                <strong>Location</strong>
+                <span>12 Rose Avenue, New York</span>
+              </div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form">
+            <label>
+              Full name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email address
+              <input type="email" name="email" placeholder="name@example.com" required />
+            </label>
+            <label>
+              Message
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Tell us what you are looking for"
+                required
+              ></textarea>
+            </label>
+            <button type="submit" class="primary-btn submit-btn">Send enquiry</button>
+            <p id="form-success" class="success-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Veloura Boutique</p>
+        <div>
+          <a href="#">Instagram</a>
+          <a href="#">Pinterest</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
